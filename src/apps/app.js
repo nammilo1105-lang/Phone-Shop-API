@@ -4,10 +4,10 @@ const config = require("config");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const cors = require("cors");
-// const swaggerUi = require("swagger-ui-express");
-// const swaggerSpec = require("../../config/swagger");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("../../config/swagger");
 
-// app.use(cors());
+app.use(cors());
 app.use(
     cors({
         origin: "http://localhost:5173",
@@ -17,11 +17,11 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use(
-//   "/api-docs",
-//   swaggerUi.serve,
-//   swaggerUi.setup(swaggerSpec)
-// );
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec)
+);
 
 // Serve static uploads folder
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
