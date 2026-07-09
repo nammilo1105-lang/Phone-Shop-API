@@ -1,0 +1,47 @@
+{
+  "dependencies": {
+    "@google/genai": "^2.10.0",
+    "axios": "^1.18.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^2.3.0",
+    "config": "^4.4.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "open": "^8.4.2",
+    "openai": "^6.45.0",
+    "sharp": "^0.35.3",
+    "slugify": "^1.6.9",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "name": "phone-shop_api",
+  "version": "1.0.0",
+  "main": "src/bin/www.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.6.0",
+    "globals": "^17.7.0",
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "start": "node --watch src/bin/www.js",
+    "dev": "nodemon src/bin/www.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Phone Shop RESTful API"
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Đơn hàng mới</title>
+</head>
+<body style="font-family: Arial;">
+
+    <h2>🛒 Thông tin đơn hàng mới</h2>
+
+    <p><strong>Mã đơn hàng:</strong> <%= payload.orderCode %></p>
+    <p><strong>Khách hàng:</strong> <%= payload.fullName %></p>
+    <p><strong>Điện thoại:</strong> <%= payload.phone %></p>
+    <p><strong>Email:</strong> <%= payload.email %></p>
+    <p><strong>Địa chỉ:</strong> <%= payload.address %></p>
+    <p><strong>Ngày đặt:</strong> <%= new Date(payload.createdAt).toLocaleString("vi-VN") %></p>
+
+    <hr />
+
+    <table width="100%" border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+        <thead>
+            <tr style="background:#f2f2f2;">
+                <th align="left">Sản phẩm</th>
+                <th align="center">Số lượng</th>
+                <th align="right">Đơn giá</th>
+                <th align="right">Thành tiền</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% const list = items || []; %>
+            <% for(let item of list) { %>
+                <tr>
+                    <td><%= item.name %></td>
+                    <td align="center"><%= item.qty %></td>
+                    <td align="right"><%= item.price%>đ</td>
+                    <td align="right"><%= (item.price * item.qty).toLocaleString("vi-VN") %>đ</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+    <h3 style="text-align:right; margin-top:20px;">
+        Tổng tiền: <%= payload.totalPrice.toLocaleString("vi-VN") %>đ
+    </h3>
+
+</body>
+</html>
